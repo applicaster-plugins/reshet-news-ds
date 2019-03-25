@@ -90,11 +90,7 @@ export function mapItem(item) {
         result.id = item.video.referenceId;
       }
     } else {
-      const aurl = encodeURIComponent(
-        `news13://presentRN?plugin=ReactNativeArticle&bundle=ArticleHub&presentation=push&reactProps[item_id]=${
-          result.id
-        }`
-      );
+      const aurl = encodeURIComponent(item.link);
       const href = `news13://present?linkUrl=${aurl}&webview=true&showcontext=true&shareable=true`;
       result.link = {
         type: 'atom',
