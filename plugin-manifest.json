@@ -1,0 +1,64 @@
+{
+  "api": {},
+  "dependency_repository_url": [
+    "https://github.com/applicaster-plugins/reshet-news-ds/"
+  ],
+  "platform": null,
+  "author_name": "Yaniv Solnik",
+  "author_email": "y.solnik@applicaster.com",
+  "manifest_version": "0.0.1",
+  "name": "reshetnewds",
+  "description": "data source plugin for reshet news",
+  "type": "data_source_provider",
+  "identifier": "reshetnewsds",
+  "ui_builder_support": true,
+  "dependency_name": "@applicaster/zapp-pipes-provider-reshet-news-ds",
+  "dependency_version": "1.0.0",
+  "whitelisted_account_ids": ["5891b9f978f9f300171455e5"],
+  "min_zapp_sdk": "6.3.1.6",
+  "deprecated_since_zapp_sdk": "",
+  "unsupported_since_zapp_sdk": "",
+  "scheme": "reshetnewsds",
+  "data_types": [
+    {
+      "label": "vod",
+      "value": "vod",
+      "documentation": {
+        "link": "https://github.com/applicaster-plugins/reshet-news-ds#readme",
+        "input_description": "id",
+        "input_placeholder": "id",
+        "input_description_image_url": ""
+      }
+    },
+    {
+      "label": "home",
+      "value": "home",
+      "documentation": {
+        "link": "https://github.com/applicaster-plugins/reshet-news-ds#readme",
+        "input_description": "id",
+        "input_placeholder": "id",
+        "input_description_image_url": ""
+      }
+    },
+    {
+      "label": "live",
+      "value": "live",
+      "documentation": {
+        "link": "https://github.com/applicaster-plugins/reshet-news-ds#readme",
+        "input_description": "id",
+        "input_placeholder": "id",
+        "input_description_image_url": ""
+      }
+    },
+    {
+      "label": "channel",
+      "value": "channel",
+      "documentation": {
+        "link": "https://github.com/applicaster-plugins/reshet-news-ds#readme",
+        "input_description": "id",
+        "input_placeholder": "id",
+        "input_description_image_url": ""
+      }
+    }
+  ]
+}
