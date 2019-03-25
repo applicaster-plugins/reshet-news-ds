@@ -1,6 +1,6 @@
-# zapp-pipes-provider-reshet
+# zapp-pipes-provider-reshet-news
 
-Data source provider for Reshet
+Data source provider for Reshet News
 
 ## Getting Started
 
