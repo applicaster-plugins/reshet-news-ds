@@ -90,8 +90,9 @@ export function mapItem(item) {
         result.id = item.video.referenceId;
       }
     } else {
-      const aurl = encodeURIComponent(item.link);
-      const href = `news13://present?linkUrl=${aurl}&webview=true&showcontext=true&shareable=true`;
+      const itemLink = item.link.indexOf('?') === -1 ? `${item.link}?webview=true` : `${item.link}&webview=true`;
+      const aurl = encodeURIComponent(itemLink);
+      const href = `news13://present?linkUrl=${aurl}&showcontext=true&shareable=true`;
       result.link = {
         type: 'atom',
         rel: 'alternate',
