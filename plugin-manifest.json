@@ -13,8 +13,11 @@
   "identifier": "reshetnewsds",
   "ui_builder_support": true,
   "dependency_name": "@applicaster/zapp-pipes-provider-reshet-news-ds",
-  "dependency_version": "1.0.2",
-  "whitelisted_account_ids": ["5891b9f978f9f300171455e5", "5c6abadabaa924000cb6000c"],
+  "dependency_version": "1.0.3",
+  "whitelisted_account_ids": [
+    "5891b9f978f9f300171455e5",
+    "5c6abadabaa924000cb6000c"
+  ],
   "min_zapp_sdk": "6.3.1.6",
   "deprecated_since_zapp_sdk": "",
   "unsupported_since_zapp_sdk": "",
