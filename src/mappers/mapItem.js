@@ -92,8 +92,8 @@ export function mapItem(item) {
     } else {
       const href =
         item.link.indexOf('?') === -1
-          ? `${item.link}?webview=true`
-          : `${item.link}&webview=true`;
+          ? `${item.link}?webview=true&showcontext=true&shareable=true`
+          : `${item.link}&webview=true&showcontext=true&shareable=true`;
       result.link = {
         type: 'atom',
         rel: 'alternate',
