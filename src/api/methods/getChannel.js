@@ -33,9 +33,10 @@ function getChannelPage(channelId, pageId) {
   return axios
     .get(`${config.reshetapi.CHANNEL_API_URL}${channelId}/${pageId}`)
     .then(response => {
-      let str = atob(response.data);
+      response.data
+      let str = atob(response.data);            
       return JSON.parse(str);
-    });
+    }).catch(err => {return {}});    
 }
 
 module.exports = { getChannel };
