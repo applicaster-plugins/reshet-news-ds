@@ -179,3 +179,15 @@ export function mergeUrlParams(params) {
     return params;
   }
 }
+
+export function getItemUrls(id) {
+  const link = encodeURIComponent(
+    `reshetnewsds://fetchData?type=channel&id=${id}`
+  );
+  const header_action_url = `news13://presentlayout?screenname=channel&dstype=atom_feed&dsurl=${link}`;
+
+  return {
+    header_action_url,
+    link
+  };
+}

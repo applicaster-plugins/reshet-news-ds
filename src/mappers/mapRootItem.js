@@ -1,3 +1,5 @@
+import { getItemUrls } from '../utils';
+
 export function mapRootItem(item) {
   try {
     const {
@@ -6,7 +8,7 @@ export function mapRootItem(item) {
       app_feed_image,
       image,
       title,
-      url: header_action_url
+      url: _header_action_url
     } = item || {};
 
     const id = __id || _id;
@@ -54,6 +56,7 @@ export function mapRootItem(item) {
       }
     ];
 
+    const header_action_url = _header_action_url || id ? getItemUrls(id) : '';
     const result = {
       type: {
         value: 'feed'
