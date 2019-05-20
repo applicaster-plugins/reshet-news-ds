@@ -1,7 +1,15 @@
 export function mapRootItem(item) {
   try {
-    const { ID: id, app_feed_image, image, title, url: header_action_url } =
-      item || {};
+    const {
+      id: __id,
+      ID: _id,
+      app_feed_image,
+      image,
+      title,
+      url: header_action_url
+    } = item || {};
+
+    const id = __id || _id;
 
     let media_item = [];
     if (image) {

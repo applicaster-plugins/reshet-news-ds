@@ -13,8 +13,12 @@ export const config = {
     licenseKey: 'JjwGls8Dvw5tGYE'
   },
   reshetapi: {
-    MAX_CHANNEL_PAGES: 6,
-    CHANNEL_API_URL: 'https://news-api.reshet.tv/channel/'
+    MAX_PAGES: 6,
+    CHANNEL_API_URL: 'https://news-api.reshet.tv/channel/',
+    DATA_PAGES_URLS: {
+      CHANNEL: 'https://news-api.reshet.tv/channel/',
+      GRID: 'https://news-api.reshet.tv/grid/'
+    }
   },
   geoBlockVideoUrl:
     'http://besttv1.cdn.it.best-tv.com/reshet/media/1551111274001/201711/1332/1551111274001_5659162873001_5659162639001.mp4',

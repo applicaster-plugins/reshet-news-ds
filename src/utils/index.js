@@ -1,7 +1,7 @@
 import { config } from '../config';
 import axios from 'axios';
 import _url from 'url';
-import { mapRootItem } from '../mappers/mapRooItem';
+import { mapRootItem } from '../mappers/mapRootItem';
 
 var wasInIsrael = null;
 
