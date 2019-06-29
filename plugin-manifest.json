@@ -6,14 +6,14 @@
   "platform": null,
   "author_name": "Yaniv Solnik",
   "author_email": "y.solnik@applicaster.com",
-  "manifest_version": "0.1.0",
+  "manifest_version": "0.2.0",
   "name": "reshetnewds",
   "description": "data source plugin for reshet news",
   "type": "data_source_provider",
   "identifier": "reshetnewsds",
   "ui_builder_support": true,
   "dependency_name": "@applicaster/zapp-pipes-provider-reshet-news-ds",
-  "dependency_version": "1.1.1",
+  "dependency_version": "1.2.0",
   "whitelisted_account_ids": [
     "5891b9f978f9f300171455e5",
     "5c6abadabaa924000cb6000c"
@@ -58,6 +58,16 @@
       "value": "channel",
       "documentation": {
         "link": "https://github.com/applicaster-plugins/reshet-news-ds#readme",
+        "input_description": "id",
+        "input_placeholder": "id",
+        "input_description_image_url": ""
+      }
+    },
+    {
+      "label": "grid",
+      "value": "grid",
+      "documentation": {
+        "link": "https://github.com/applicaster/zapp-pipes-provider-reshet#readme",
         "input_description": "id",
         "input_placeholder": "id",
         "input_description_image_url": ""

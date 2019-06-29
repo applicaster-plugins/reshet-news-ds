@@ -56,7 +56,8 @@ export function mapRootItem(item) {
       }
     ];
 
-    const header_action_url = _header_action_url || id ? getItemUrls(id) : '';
+    const header_action_url =
+      title && (_header_action_url || id) ? getItemUrls(id) : undefined;
     const result = {
       type: {
         value: 'feed'

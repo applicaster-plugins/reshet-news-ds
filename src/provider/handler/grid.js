@@ -7,19 +7,18 @@ export const grid = async params => {
   const { id, section = -1 } = params;
   const result = await api.getGrid(id);
   let data = { ...result };
-  let items = data.entry.filter(
-    entry => entry.title && (entry.id || section > -1)
-  );
+  let items = data.entry.filter(entry => entry.entry && entry.entry.length > 0);
   let mapFunc = mapRootItem;
 
-  const imageItem = { ...data.tagData, entry: [] };
+  const imageEntry = { ...data.tagData };
+  const imageItem = { entry: [imageEntry] };
   items.splice(0, 0, imageItem);
   delete data.tagData;
-
   if (section > -1) {
+    const itemType = section == 0 ? 'feed' : 'link';
     const rootItem = items[parseInt(section)];
     items = rootItem.entry;
-    mapFunc = mapItem;
+    mapFunc = mapItem(itemType, section == 0, section == 0);
     data = { tagData: rootItem, title: rootItem.title };
   }
 
@@ -34,5 +33,6 @@ export const grid = async params => {
     }
     return item;
   });
-  return createFeedItem(data, entry);
+
+  return createFeedItem(data, entry, section > 0, false, section == 0);
 };
