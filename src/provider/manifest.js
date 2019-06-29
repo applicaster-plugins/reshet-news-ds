@@ -1,4 +1,4 @@
 export const manifest = {
-  handlers: ['vod', 'home', 'live', 'channel'],
+  handlers: ['vod', 'home', 'live', 'channel', 'grid', 'channelWrapper'],
   help: {}
 };

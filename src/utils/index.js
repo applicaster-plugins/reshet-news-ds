@@ -1,7 +1,7 @@
 import { config } from '../config';
 import axios from 'axios';
 import _url from 'url';
-import { mapRootItem } from '../mappers/mapRooItem';
+import { mapRootItem } from '../mappers/mapRootItem';
 
 var wasInIsrael = null;
 
@@ -158,10 +158,37 @@ export function createMediaGroupItem(src, key) {
   };
 }
 
-export function createFeedItem(data, entry) {
-  const feed = mapRootItem(data.tagData);
+export function createFeedItem(
+  data,
+  entry,
+  addRootItemToEntry = false,
+  firstItemAsRoot = false,
+  emptyRootItem = false
+) {
+  const feed = firstItemAsRoot
+    ? entry[0]
+    : emptyRootItem
+    ? { type: { value: 'feed' } }
+    : mapRootItem(data.tagData);
+  if (firstItemAsRoot) {
+    feed.type.value = 'feed';
+    entry.splice(0, 1);
+  }
+
+  if (addRootItemToEntry && feed.title && feed.id) {
+    const feedItem = { ...feed };
+    const type = 'link';
+    const src = `reshetnewsds://fetchData?type=channelWrapper&id=${
+      feedItem.id
+    }`;
+    delete feedItem.extensions;
+    feedItem.content = { type, src };
+
+    entry.splice(0, 0, feedItem);
+  }
   feed.entry = entry;
   feed.title = data.title;
+
   return feed;
 }
 
@@ -178,4 +205,25 @@ export function mergeUrlParams(params) {
   } finally {
     return params;
   }
+}
+
+export function getItemUrls(id) {
+  const link = encodeURIComponent(
+    `reshetnewsds://fetchData?type=channel&id=${id}`
+  );
+  const header_action_url = `news13://presentlayout?screenname=channel&dstype=atom_feed&dsurl=${link}`;
+
+  return {
+    header_action_url,
+    link
+  };
+}
+
+export function addShareParamsToLink(link) {
+  const result =
+    link.indexOf('?') === -1
+      ? `${link}?webview=true&showcontext=true&shareable=true`
+      : `${link}&webview=true&showcontext=true&shareable=true`;
+
+  return result;
 }
