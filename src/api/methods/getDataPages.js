@@ -46,5 +46,8 @@ function getPage(baseUrl, id, pageId) {
       return {};
     });
 }
+const clearPagesData = () => {
+  pagesData = {};
+};
 
-module.exports = { getDataPages };
+module.exports = { getDataPages, clearPagesData };

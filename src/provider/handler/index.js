@@ -6,11 +6,15 @@ import {
 } from '../../utils';
 
 import { config } from '../../config';
+import { clearCache as doClearCache } from '../../api';
 
 export const handler = nativeBridge => params => {
-  const { type, isStaging } = params;
-
   params = mergeUrlParams(params);
+  const { type, isStaging, clearCache = false } = params;
+
+  if (clearCache) {
+    doClearCache();
+  }
 
   if (isStaging === 'true') {
     config.isStaging = true;

@@ -13,7 +13,7 @@ const get = (feedType, index, forceLoad) => {
       `https://${stagingPrefix}news-api.reshet.tv/grid/10/`
     ];
 
-    if (!reshetData[feedType] || forceLoad) {      
+    if (!reshetData[feedType] || forceLoad) {
       axios.get(urls[feedType]).then(response => {
         if (!response.data) {
           return reject('no reshet data');
@@ -29,4 +29,8 @@ const get = (feedType, index, forceLoad) => {
   });
 };
 
-module.exports = { get };
+const clearReshetData = () => {
+  reshetData = {};
+};
+
+module.exports = { get, clearReshetData };
