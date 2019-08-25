@@ -35,16 +35,18 @@ const getDataPages = async (type, id, forceLoad) => {
   return data;
 };
 
-function getPage(baseUrl, id, pageId) {
-  return axios
-    .get(`${baseUrl}${id}/${pageId}`)
-    .then(response => {
-      const str = atob(response.data);
-      return JSON.parse(str);
-    })
-    .catch(err => {
-      return {};
-    });
+async function getPage(baseUrl, id, pageId) {
+  try {
+    let response = await axios.get(`${baseUrl}${id}/${pageId}`);
+    let str = atob(response.data);
+    if (pageId === 1 && str.length === 0) {
+      response = await axios.get(`${baseUrl}${id}`);
+      str = atob(response.data);
+    }
+    return JSON.parse(str);
+  } catch (err) {
+    return {};
+  }
 }
 const clearPagesData = () => {
   pagesData = {};
