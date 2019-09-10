@@ -7,8 +7,9 @@ export const getFeed = async (
   apiFunctionName,
   firstItemAsRoot = false
 ) => {
-  const { id } = params;
-  const data = await api[apiFunctionName](id);
+  const { id, limits: _limits = '' } = params;
+  const limits = _limits.split(',');
+  const data = await api[apiFunctionName](id, false, limits);
   const entry = data.entry.map(mapItem());
   return createFeedItem(data, entry, false, firstItemAsRoot);
 };
