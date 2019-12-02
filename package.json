@@ -1,6 +1,6 @@
 {
   "name": "@applicaster/zapp-pipes-provider-reshet-news-ds",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Reshet News Data Source Provider",
   "main": "lib/index.js",
   "scripts": {
@@ -28,7 +28,8 @@
   "homepage": "https://github.com/applicaster-plugins/reshet-news-ds#readme",
   "dependencies": {
     "atob": "^2.1.2",
-    "axios": "^0.16.2"
+    "axios": "^0.16.2",
+    "moment": "^2.24.0"
   },
   "devDependencies": {
     "@applicaster/zapp-pipes-dev-kit": "^1.2.1",
