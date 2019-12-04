@@ -1,6 +1,6 @@
 {
   "name": "@applicaster/zapp-pipes-provider-reshet-news-ds",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Reshet News Data Source Provider",
   "main": "lib/index.js",
   "scripts": {

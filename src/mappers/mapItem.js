@@ -1,5 +1,4 @@
 import { addShareParamsToLink } from '../utils/';
-import moment from 'moment';
 
 export function mapItem(
   itemType = 'link',
@@ -128,9 +127,7 @@ export function mapItem(
       }
 
       if (item.video && item.video.timestamp) {
-        result.extensions.video_start_time = moment(
-          new Date(item.video.timestamp)
-        ).unix();
+        result.extensions.video_start_time = item.video.timestamp;
       }
 
       if (item.link) {
