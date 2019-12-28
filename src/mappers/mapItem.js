@@ -161,6 +161,16 @@ export function mapItem(
         }
       }
 
+      //artimedia extensions
+
+      result.extensions.content_duration = item.video.duration;
+      result.extensions.program_name = item.category2.title;
+      result.extensions.content_type = item.category4.title;
+      result.extensions.content_season = item.category3.title;
+      result.extensions.content_episode = '';
+      result.extensions.content_genre = '';
+      result.extensions.content_target_audience = '';
+
       if (item.tags) {
         item.tags = item.tags.map(atag => {
           if (atag.title) {
