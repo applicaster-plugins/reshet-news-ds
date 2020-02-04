@@ -26,8 +26,6 @@ export const handler = nativeBridge => params => {
   }
 
   return commands[type](params)
-    .then(getVideosData)
-    .then(filterGeoBlockedVideos)
     .then(nativeBridge.sendResponse)
     .catch(nativeBridge.throwError);
 };

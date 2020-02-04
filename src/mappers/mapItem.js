@@ -126,6 +126,10 @@ export function mapItem(
         result.extensions.analytics_extra_params.referenceId = item.video.referenceId.toString();
       }
 
+      if (item.video && item.video.src) {
+        result.content = { src: item.video.src };
+      }
+
       if (item.video && item.video.timestamp) {
         result.extensions.video_start_time = item.video.timestamp;
       }
