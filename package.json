@@ -29,7 +29,7 @@
   "dependencies": {
     "atob": "^2.1.2",
     "axios": "^0.16.2",
-    "moment": "^2.24.0"
+    "moment": "^2.29.4"
   },
   "devDependencies": {
     "@applicaster/zapp-pipes-dev-kit": "^1.2.1",
